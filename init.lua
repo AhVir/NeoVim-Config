@@ -42,3 +42,29 @@ if
 then
     vim.fn.mkdir(undodir, "p");
 end
+
+vim.opt.backup = false -- do not create a backup file
+vim.opt.writebackup = false -- do not write to a backup file
+vim.opt.swapfile = false -- do not create a swapfile
+vim.opt.undofile = true -- do create an undo file
+vim.opt.undodir = undodir -- set the undo directory
+vim.opt.updatetime = 300 -- faster completion
+vim.opt.timeoutlen = 500 -- timeout duration
+vim.opt.ttimeoutlen = 50 -- key code timeout
+vim.opt.autoread = true -- auto-reload changes if outside of neovim
+vim.opt.autowrite = false -- do not auto-save
+
+vim.opt.hidden = true -- allow hidden buffers
+vim.opt.errorbells = false -- no error sounds
+vim.opt.backspace = "indent,eol,start" -- better backspace behaviour
+vim.opt.autochdir = false -- do not autochange directories
+vim.opt.iskeyword:append("-") -- include - in words
+vim.opt.path:append("**") -- include subdirs in search
+vim.opt.selection = "inclusive" -- include last char in selection
+vim.opt.mouse = "a" -- enable mouse support
+vim.opt.clipboard:append("unnamedplus") -- use system clipboard
+vim.opt.modifiable = true -- allow buffer modifications
+
+-- Cursor behavior comes from this one
+vim.opt.guicursor =
+	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
